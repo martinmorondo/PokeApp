@@ -11,7 +11,7 @@ let perPage = 40;
 let currentPage = 0;
 
 const changePg = (value) => {
-    //console.log("value: ", value);
+    //console.log("value");
     let newUrl = `${pokeURL}pokemon?limit=${value}`;
     perPage = value;
     getPokemons(newUrl);
@@ -25,17 +25,17 @@ const next = () => {
 
 const getPokemons = (url) => {
     let params = new URLSearchParams(url.split('?')[1]);
-    let offset = params.get('offset');
-    currentPage = offset / perPage;
+    let offSet = params.get('offset');
+    currentPage = offSet / perPage;
 
     fetch(url)
         .then(response => response.json())
-        .then(responseJson => {
-            prevLink = responseJson.previous;
-            nextLink = responseJson.next;
-            count = responseJson.count;
+        .then(responseJSON => {
+            prevLink = responseJSON.previous;
+            nextLink = responseJSON.next;
+            count = responseJSON.count;
             addNumbers(count);
-            showPokemons(responseJson.results);
+            showPokemons(responseJSON.results);
         })
 }
 
