@@ -10,15 +10,17 @@ let count = 0;
 let perPage = 40;
 let currentPage = 0;
 
-const changePg = (value) => {
+const changePag = (value) => {
     //console.log("value");
     let newUrl = `${pokeURL}pokemon?limit=${value}`;
     perPage = value;
     getPokemons(newUrl);
 }
+
 const prev = () => {
     getPokemons(prevLink);
 }
+
 const next = () => {
     getPokemons(nextLink);
 }
@@ -45,11 +47,12 @@ const showPokemons = (array) => {
         fetch(item.url)
             .then(response => response.json())
             .then(data => {
-                //console.log("data: ", data)
+                // console.log(data);
                 loadCard(data);
             })
     })
 }
+
 const loadCard = (data) => {
     const image = data.sprites.other.home.front_default;
     let newImage = image ? image : '/images/default.png';
@@ -64,7 +67,7 @@ const loadCard = (data) => {
 }
 
 const clearContainer = () =>  container.innerHTML = '';
-const clearNavigation = () => navigation.innerHTML='';
+const clearNavigation = () => navigation.innerHTML= '';
 
 const addNumbers = (count) => {
     clearNavigation();
@@ -78,6 +81,7 @@ const addNumbers = (count) => {
     }
     addFocusClass();
 }
+
 const actionNumber = (index) => {
     const newLink = `https://pokeapi.co/api/v2/pokemon?offset=${index*perPage}&limit=${perPage}`;
     getPokemons(newLink);
