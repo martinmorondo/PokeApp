@@ -1,8 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&display=swap');
 
-body {
-    font-family: 'Baloo 2', 'helvetica', cursive;
+* {
+    box-sizing: border-box;
+    padding: 0;
     margin: 0;
+}
+
+body {
+    font-family: 'Baloo 2', 'helvetica', cursive, sans-serif;
+    margin: 0;
+    background: linear-gradient(to bottom, black, white, gray, black, white, black, gray, white);
+    background-repeat: no-repeat;
 }
 
 .container {
@@ -11,8 +19,7 @@ body {
 }
 
 header {
-    background-color: #7d4ce0;
-    color: #fff;
+    background:  radial-gradient(circle at 50% -20.71%, #ffef37 0, #fff327 7.14%, #fff619 14.29%, #e8f80f 21.43%, #c9f911 28.57%, #a6f81e 35.71%, #7cf62c 42.86%, #3cf23c 50%, #00ee4d 57.14%, #00ea60 64.29%, #00e574 71.43%, #00e18a 78.57%, #00dea1 85.71%, #00dab9 92.86%, #00d8d2 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -35,6 +42,7 @@ header .limit {
 header .limit p {
     font-size: 20px;
     margin: 0;
+    font-weight: bold;
 }
 
 header .limit select {
@@ -43,6 +51,8 @@ header .limit select {
     border: 0px;
     border-radius: 8px;
     font-family: 'Baloo 2', 'helvetica', cursive;
+    background-color: #fff;
+    border-radius: 18px;
 }
 
 .pokemons {
@@ -62,8 +72,7 @@ header .limit select {
     justify-content: center;
     align-items: center;
     font-weight: 600;
-    background-color: #97979721;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    background: linear-gradient(180deg, #adffff 0, #a4ffff 25%, #9df2f2 50%, #97dade 75%, #92c5cb 100%);  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
     position: relative;
 }
 
@@ -72,7 +81,7 @@ header .limit select {
     top: 4px;
     right: 8px;
     font-size: 20px;
-    color: darkgray;
+    color: blue;
     margin: 0;
 }
 .pokemons div img {
@@ -81,7 +90,6 @@ header .limit select {
 }
 .pokemons div:hover > img {
     transform: scale(1.5);
-    
 }
 
 .navigation {
